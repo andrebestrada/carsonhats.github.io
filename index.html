@@ -166,10 +166,12 @@
 			position: relative;
 			z-index: 2;
 		}
+	
+
 		#hero-background {
             background-size: cover;
             background-repeat: no-repeat;
-            background-position: center;
+            background-position: bottom;
         }
         .bg-img::before {
             content: "";
@@ -188,6 +190,8 @@
         .bg-img:hover::before {
             filter: blur(5px);
         }
+		
+
 	</style>
 <!-- Script Animación Hero - Imagenes de fondo -->
 <script id="imagenes-hero">
@@ -199,9 +203,12 @@
 		}
 		window.addEventListener('DOMContentLoaded', () => {
 			const heroBackground = document.getElementById('hero-background');
-			const images = ["https://media.discordapp.net/attachments/1114023780071768084/1114034869434065006/tuwebsimple444_A_cowboy_hat_silhouetted_against_a_setting_sun_r_caeeb3b3-54cb-4f40-b787-7ca101c83fb9.png?width=1057&height=592"];
-
+			const images = ["https://media.discordapp.net/attachments/1114023780071768084/1117133567353421915/tuwebsimple444_cowboy_hats_exhibition_apple_store_lighting_35mm_b9d798e1-2c43-4773-a9d8-56b106340ae6.png?width=1008&height=565", "https://media.discordapp.net/attachments/1114023780071768084/1114049659862786158/tuwebsimple444_macro_product_photography_of_cowboy_straw_hat_7cc3c3c0-ba2b-4917-84b8-f0d75c1e4554.png?width=706&height=565", "https://media.discordapp.net/attachments/1114023780071768084/1117133252902264832/tuwebsimple444_cowboy_hats_exhibition_apple_store_lighting_35mm_f45c6bac-650c-4317-a79b-3bf657d66506.png?width=1008&height=565", "https://media.discordapp.net/attachments/1114023780071768084/1114034869434065006/tuwebsimple444_A_cowboy_hat_silhouetted_against_a_setting_sun_r_caeeb3b3-54cb-4f40-b787-7ca101c83fb9.png?width=1057&height=592"];
+	
+			// Iniciar el carrusel solo si la ventana es mayor que 768px
+			
 			changeBackgroundImage(heroBackground, images, 0);
+			
 		});
 	</script>
 <!-- Script Animación Nav Bar - Efecto Transparente-->
@@ -246,9 +253,9 @@
 </div>
 </nav>
 <!-- Hero Centrado -->
-<section class="relative hero py-40 md:py-5 text-white" id="hero">
+<section class="relative hero py-20 md:py-5 text-white" id="hero">
 <div class="absolute z-20 overlay"></div> <!-- Added overlay div -->
-<div class="absolute inset-0 z-10" id="hero-background" style="background-size: cover; background-position: center"></div> <!-- Div de la imagen de fondo -->
+<div class="absolute inset-0 z-10 bg-bottom" id="hero-background"></div> <!-- Div de la imagen de fondo -->
 <div class="relative z-20">
 <div class="container mx-auto px-4 py-10">
 <div class="grid grid-cols-1 items-center justify-items-center">
@@ -266,7 +273,7 @@
 <a href="#imagen-cliente">
 <button class="w-full px-5 py-2 mt-4 text-m font-medium text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500" data-aos="fade-up" data-aos-delay="700" id="hero-boton-1">Envíos a todo el país</button>
 </a>
-<a href="#productos">
+<a href="#categorias-title">
 <button class="w-full px-5 py-2 mt-4 text-m font-medium text-white capitalize transition-colors duration-300 transform bg-white-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500" data-aos="fade-up" data-aos-delay="900" id="hero-boton-2">Ver Productos</button>
 </a>
 </div>
@@ -278,37 +285,37 @@
 <!-- Sección Categorias -->
 <section class="bg-white">
 <div class="container py-20 px-6 mx-auto">
-<h1 class="text-4xl font-extrabold text-center text-gray-800 capitalize lg:text-4xl" data-aos="fade-up" data-aos-delay="0" id="categorias-title">Nuestros Productos</h1>
+<h1 class="text-4xl font-extrabold text-center text-gray-800 capitalize lg:text-4xl" data-aos="fade-up" data-aos-delay="0" id="categorias-title" style="scroll-margin-top:180px;">Nuestros Productos</h1>
 <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
 <a href="proyectos.html#servicio-1">
 <div class="relative flex items-end overflow-hidden bg-cover rounded-lg h-96 bg-img" data-aos="fade-up" data-aos-delay="200" data-aos-offset="-50" id="image-categoria-1" style="background-image:url(https://cdn.midjourney.com/02c017ec-fa16-4d35-bf76-c7351983a055/0_1.png);">
 <div class="relative z-10 w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-lg bg-white/60 hover:bg-slate-300">
-<h2 class="mt-4 text-xl font-semibold text-gray-800 capitalize" id="h2-categoria-1">Lo más vendido</h2>
-<p class="mt-2 text-lg tracking-wide uppercase text-red-800" id="p-categoria-1">Descubre los sombreros que son tendencia en el mercado.</p>
+<h2 class="md:mt-4 text-xl font-awesome text-gray-800 capitalize" id="h2-categoria-1">Lo más vendido</h2>
+<p class="mt-2 text-lg tracking-wide font-bold uppercase text-gray-600" id="p-categoria-1">sombreros que son tendencia en el mercado</p>
 </div>
 </div>
 </a>
 <a href="proyectos.html#servicio-2">
 <div class="relative flex items-end overflow-hidden rounded-lg h-96 bg-img" data-aos="fade-up" data-aos-delay="400" data-aos-offset="-50" id="image-categoria-2" style="background-image:url(https://media.discordapp.net/attachments/1114023780071768084/1115827450081972235/tuwebsimple444_cowboy_hats_pilled_lighting_16mm_35mm_vivid_colo_17e064c7-dc90-4c15-8383-e885cf95c1bb.png?width=896&amp;height=502);">
 <div class="relative z-10 w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 hover:bg-slate-300">
-<h2 class="mt-4 text-xl font-semibold text-gray-800 capitalize" id="h2-categoria-2">Todas las marcas en un solo lugar</h2>
-<p class="mt-2 text-lg tracking-wide uppercase text-amber-800 text-red-800" id="p-categoria-2">Tenemos una amplia selección de marcas de sombreros.</p>
+<h2 class="md:mt-4 text-xl font-awesome text-gray-800 capitalize" id="h2-categoria-2">Todas las marcas en un solo lugar</h2>
+<p class="mt-2 text-lg tracking-wide font-bold uppercase text-gray-600" id="p-categoria-2">Con un amplia selección de marcas</p>
 </div>
 </div>
 </a>
 <a href="proyectos.html#servicio-3">
 <div class="relative flex items-end overflow-hidden bg-cover rounded-lg h-96 bg-img" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50" id="image-categoria-3" style="background-image:url(https://media.discordapp.net/attachments/1114023780071768084/1115139906495320104/tuwebsimple444_a_closeup_magazine_quality_shot_of_beach_hat_ins_04fc2b6c-2ebd-4440-8e5e-df70fb1959c9.png?width=753&amp;height=502);">
 <div class="relative z-10 w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 hover:bg-slate-300">
-<h2 class="mt-4 text-xl font-semibold text-gray-800 capitalize" id="h2-categoria-3">Sombreros para verano</h2>
-<p class="mt-2 text-lg tracking-wide uppercase text-red-800" id="p-categoria-3">Sombreros de temporada para la playa</p>
+<h2 class="md:mt-4 text-xl font-awesome text-gray-800 capitalize" id="h2-categoria-3">Sombreros para verano</h2>
+<p class="mt-2 text-lg font-bold tracking-wide uppercase text-gray-600" id="p-categoria-3">Sombreros de temporada</p>
 </div>
 </div>
 </a>
 <a href="proyectos.html#servicio-4">
 <div class="relative flex items-end overflow-hidden bg-cover rounded-lg h-96 bg-img" data-aos="fade-up" data-aos-delay="800" data-aos-offset="-50" id="image-categoria-4" style="background-image:url(https://media.discordapp.net/attachments/1114023780071768084/1114061737264697394/tuwebsimple444_macro_product_photography_of_Cowboy_Boots_Wester_c21acfc1-d12e-468f-9c9d-baaa521a9d37.png?width=740&amp;height=592);">
 <div class="relative z-10 w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 hover:bg-slate-300">
-<h2 class="mt-4 text-xl font-semibold text-gray-800 capitalize" id="h2-categoria-4">Botas, Toquillas y Accesorios</h2>
-<p class="mt-2 text-lg tracking-wide uppercase text-red-800" id="p-categoria-4">Ver todos los accesorios y botas.</p>
+<h2 class="md:mt-4 text-xl font-awesome text-gray-800 capitalize" id="h2-categoria-4">Botas, Toquillas y Accesorios</h2>
+<p class="mt-2 text-lg font-bold tracking-wide uppercase text-gray-600" id="p-categoria-4">Con el mejor precio.</p>
 </div>
 </div>
 </a>
@@ -327,31 +334,30 @@
 <div class="text-center text-gray-800">
 <div class="relative block rounded-lg shadow-lg px-6 py-12 md:py-16 md:px-12 aos-init" data-aos="fade-up" data-aos-delay="400" data-aos-offset="-50" style="margin-top: -170px; background: hsla(0, 0%, 100%, 0.7);             backdrop-filter: blur(5px);">
 <h1 class="text-3xl md:text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12" id="cta-title-1">Todas las marcas de sombreros</h1>
-<h1 class="text-blue-600 -mt-10 text-3xl md:text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12 text-red-500 -mt-10 text-3xl md:text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12" id="cta-title-2">En un solo lugar</h1>
-<a class="bg-blue-600 inline-block px-7 py-3 mb-2 md:mb-0 mr-0 md:mr-2 text-white font-bold text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out bg-red-600 inline-block px-7 py-3 mb-2 md:mb-0 mr-0 md:mr-2 text-white font-bold text-sm leading-snug uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#contacto" id="cta-button" role="button">Contáctanos</a>
+<h1 class="text-blue-600 -mt-10 text-3xl md:text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12 text-gray-600 -mt-10 text-3xl md:text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12" id="cta-title-2">En un solo lugar</h1>
+<a class="bg-blue-600 inline-block px-7 py-3 mb-2 md:mb-0 mr-0 md:mr-2 text-white font-bold text-xl md:text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out bg-red-600 inline-block px-7 py-3 mb-2 md:mb-0 mr-0 md:mr-2 text-white font-bold text-sm leading-snug uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#contacto" id="cta-button" role="button">Haz tu pedido</a>
 </div>
 </div>
 </div>
 </section>
 <!-- Sección Marcas -->
 <section class="p-10" id="contenedor-marcas">
-<h1 class="text-4xl font-extrabold text-center text-gray-800 capitalize lg:text-4xl" data-aos="fade-up" data-aos-delay="0" id="marcas-title">Nuestras marcas</h1>
-<hr class="my-12 mx-10 border-gray-200"/>
-<div class="grid mr-6 grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5" id="contenedor-marcas-1"><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" id="marca-1" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2020/05/Distribuidora-de-Sombreros-1024x633-1-e1588789895293-768x313.png"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" id="marca-2" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2020/05/tombstone11.png"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" id="marca-3" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/01/MOKSMAN-HATS-LOGO-bien-prueba2-400x150.png"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" id="marca-4" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/01/PANAMA-JOE-HATS-768x375.jpeg"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" id="marca-5" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/06/LOGO-WEST-POINT-1.png"/></div></div><hr class="my-12 mx-10 border-gray-200 dark:border-gray-700"/><div class="grid mr-6 grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5" id="contenedor-marcas-2"><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" id="marca-1" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/01/EL-CARTEL-LOGO-BIEN-minii.png"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" id="marca-2" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2020/05/IMG_1088.jpg"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" id="marca-3" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/01/N.R.-HATS-LOGO9ugndsifkgryigbauykug-buena.png"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" id="marca-4" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2020/06/logoSierra-e1593318584127.png"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" id="marca-5" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/01/EL-GRAN-CHAPARRAL-LOGO-768x293.png"/></div></div><hr class="my-12 mx-10 border-gray-200 dark:border-gray-700"/><div class="grid mr-6 grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5" id="contenedor-marcas-3"><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" id="marca-1" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/01/Archivo_000-768x228.jpg"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" id="marca-2" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/06/logo-palmoro-hats-1-1-768x576.png"/></div></div></section>
+<h1 class="text-4xl py-10 font-extrabold text-center text-gray-800 capitalize lg:text-4xl" data-aos="fade-up" data-aos-delay="0" id="marcas-title">Nuestras marcas</h1>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-6 lg:grid-cols-4 text-center justify-center" id="contenedor-marcas-1"><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" class="hover:scale-125, hover:opacity-50" id="marca-1" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2020/05/Distribuidora-de-Sombreros-1024x633-1-e1588789895293-768x313.png"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" class="hover:scale-125, hover:opacity-50" id="marca-2" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2020/05/tombstone11.png"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" class="hover:scale-125, hover:opacity-50" id="marca-3" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/01/MOKSMAN-HATS-LOGO-bien-prueba2-400x150.png"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" class="hover:scale-125, hover:opacity-50" id="marca-4" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/01/PANAMA-JOE-HATS-768x375.jpeg"/></div></div><hr class="my-12 mx-10 border-gray-200 dark:border-gray-700"/><div class="grid grid-cols-1 gap-8 md:grid-cols-6 lg:grid-cols-4" id="contenedor-marcas-2"><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" class="hover:scale-125, hover:opacity-50" id="marca-1" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/06/LOGO-WEST-POINT-1.png"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" class="hover:scale-125, hover:opacity-50" id="marca-2" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/01/EL-CARTEL-LOGO-BIEN-minii.png"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" class="hover:scale-125, hover:opacity-50" id="marca-3" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2020/05/IMG_1088.jpg"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" class="hover:scale-125, hover:opacity-50" id="marca-4" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/01/N.R.-HATS-LOGO9ugndsifkgryigbauykug-buena.png"/></div></div><hr class="my-12 mx-10 border-gray-200 dark:border-gray-700"/><div class="grid grid-cols-1 gap-8 md:grid-cols-6 lg:grid-cols-4" id="contenedor-marcas-3"><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" class="hover:scale-125, hover:opacity-50" id="marca-1" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2020/06/logoSierra-e1593318584127.png"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" class="hover:scale-125, hover:opacity-50" id="marca-2" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/01/EL-GRAN-CHAPARRAL-LOGO-768x293.png"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" class="hover:scale-125, hover:opacity-50" id="marca-3" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/01/Archivo_000-768x228.jpg"/></div><div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="600" data-aos-offset="-50"><img alt="logo" class="hover:scale-125, hover:opacity-50" id="marca-4" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/06/logo-palmoro-hats-1-1-768x576.png"/></div></div><hr class="my-12 mx-10 border-gray-200 dark:border-gray-700"/></section>
 <!-- Imagen Especifica -->
-<section class="bg-white relative py-20 md:py-0 md:px-20" data-aos="fade-up" data-aos-delay="300" data-aos-offset="-100" id="imagen-cliente" style="scroll-margin-top:150px;">
-<h1 class="text-2xl font-extrabold text-center text-gray-800 capitalize lg:text-3xl">
-<span class="text-stone-600 text-4xl font-extrabold mb-8" data-aos="fade-down" id="titulo-imagen">
+<section class="bg-white relative py-20 md:py-10 md:px-20" id="imagen-cliente" style="scroll-margin-top:150px;">
+<h1 class="text-2xl font-extrabold text-center text-gray-800 capitalize lg:text-3xl" data-aos="fade-down" data-aos-offset="-50">
+<span class="text-stone-600 text-4xl font-extrabold mb-8" id="titulo-imagen">
 				¿Cómo hago un pedido?</span>
 </h1>
-<img alt="" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/03/SOMBREROS-4-1-2048x1152.png"/>
+<img alt="" data-aos="fade-up" data-aos-delay="500" data-aos-offset="-50" src="https://cdn-bkokl.nitrocdn.com/mSfGKPPXzHowwswckwGuGVqpqnmIbzaY/assets/images/optimized/rev-16fe432/wp-content/uploads/2021/03/SOMBREROS-4-1-2048x1152.png"/>
 </section>
 <!-- Sección Productos -->
 <section class="bg-gray-50 py-10" id="productos">
 <div class="container px-5 py-10 mx-auto">
 <!-- Tu contenido aquí -->
 <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl">
-<span class="text-stone-600 text-4xl font-extrabold mb-8" data-aos="fade-down" id="titulo-productos">Explora nuestra gama de productos</span>
+<span class="text-stone-600 text-4xl font-extrabold mb-8" data-aos="fade-down" id="titulo-productos">Explora nuestros productos</span>
 </h1>
 <div class="grid grid-cols-1 gap-6 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
 <div class="flex flex-col items-center p-5 space-y-3 text-center bg-white hover:bg-stone-900 bg-opacity-50 hover:bg-opacity-20 backdrop-blur-lg rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="600" id="card-1" onmouseout="resetText(this)" onmouseover="changeText(this)">
@@ -362,12 +368,12 @@
 <div class="flex flex-col items-center p-5 space-y-3 text-center bg-white hover:bg-stone-900 bg-opacity-50 hover:bg-opacity-20 backdrop-blur-lg rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="800" id="card-2" onmouseout="resetText(this)" onmouseover="changeText(this)">
 <h1 class="text-2xl text-gray-700 font-bold capitalize py-5" id="nombre-producto-2">Sombrero para hombre</h1>
 <img alt="product 1" class="w-100 px-3 mt-2 rounded-xl mt-5" id="imagen-producto" loading="lazy" src="https://media.discordapp.net/attachments/1114023780071768084/1115434902695989320/tuwebsimple444_award_winning_photo_for_cowboy_hat_magazine._Dra_677f9953-77cc-4ea9-ab99-abc44feea1d0.png?width=916&amp;height=916"/>
-<p class="text-slate-500 font-semibold text-xl my-10" id="product-description-2" style="height: 100px; overflow: auto">Diseños clásicos y contemporáneos para los hombres de hoy.</p>
+<p class="text-slate-500 font-semibold text-xl my-10" id="product-description-2" style="height: 100px; overflow: auto">Diseños clásicos y contemporáneos para hombres.</p>
 </div>
 <div class="flex flex-col items-center p-5 space-y-3 text-center bg-white hover:bg-stone-900 bg-opacity-50 hover:bg-opacity-20 backdrop-blur-lg rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="1000" id="card-3" onmouseout="resetText(this)" onmouseover="changeText(this)">
 <h1 class="text-2xl text-gray-700 font-bold capitalize py-5" id="nombre-producto-3">Sombreros para niños</h1>
 <img alt="product 1" class="w-100 px-3 mt-2 rounded-xl mt-5" id="imagen-producto" loading="lazy" src="https://media.discordapp.net/attachments/1114023780071768084/1115818425596530798/tuwebsimple444_kids_of_different_ages_with_cowboy_hats_playing__7cb3ca43-8a6e-4e0c-b565-724c4df36919.png?width=502&amp;height=502"/>
-<p class="text-slate-500 font-semibold text-xl my-10" id="product-description-3" style="height: 100px; overflow: auto">Sombreros divertidos y cómodos para los más pequeños.</p>
+<p class="text-slate-500 font-semibold text-xl my-10" id="product-description-3" style="height: 100px; overflow: auto">Ideales para protegerlos del sol con estilo.</p>
 </div>
 </div>
 </div>
@@ -485,7 +491,7 @@
 </p>
 <p class="text-xl md:text-2xl font-semibold" data-aos="fade-up" data-aos-delay="2500">Teléfonos
 							de
-							oficina: <span class="font-normal" id="contacto-telefono">+527121950903</span></p>
+							oficina: <span class="font-normal" id="contacto-telefono">712 195 0903</span></p>
 </div>
 <!-- <div class="mt-50 text-center"> -->
 <div class="py-10">
